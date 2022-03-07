@@ -1,7 +1,7 @@
-<p align="center"><a href="https://darkreader.org" target="_blank" rel="noreferrer noopener"><img width="250" alt="Dark Reader's mascot" src="https://raw.githubusercontent.com/darkreader/darkreader.github.io/master/images/darkreader-mascot.svg"></a></p>
+<p align="center"><a href="https://PP.org" target="_blank" rel="noreferrer noopener"><img width="250" alt="Dark Reader's mascot" src="https://raw.githubusercontent.com/PP/PP.github.io/master/images/PP-mascot.svg"></a></p>
 <p align="center">Dark Reader <strong>analyzes</strong> web pages and aims to <strong>reduce the eyestrain</strong> while browsing the web.</p>
 <br/>
-<p align="center"><a rel="noreferrer noopener" href="https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh/"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Chrome-141e24.svg?&style=for-the-badge&logo=google-chrome&logoColor=white"></a>  <a rel="noreferrer noopener" href="https://addons.mozilla.org/firefox/addon/darkreader/"><img alt="Firefox Add-ons" src="https://img.shields.io/badge/Firefox-141e24.svg?&style=for-the-badge&logo=firefox-browser&logoColor=white"></a>  <a rel="noreferrer noopener" href="https://darkreader.org/safari/"><img alt="Apple App Store" src="https://img.shields.io/badge/Safari-141e24.svg?&style=for-the-badge&logo=safari&logoColor=white"></a>  <a rel="noreferrer noopener" href="https://microsoftedge.microsoft.com/addons/detail/dark-reader/ifoakfbpdcdoeenechcleahebpibofpc/"><img alt="Edge Addons" src="https://img.shields.io/badge/Edge-141e24.svg?&style=for-the-badge&logo=microsoft-edge&logoColor=white"></a>  <a el="noreferrer noopener" href="https://addons.thunderbird.net/thunderbird/addon/darkreader"><img alt="Thunderbird" src="https://img.shields.io/badge/Thunderbird-141e24.svg?&style=for-the-badge&logo=thunderbird&logoColor=white"></a>
+<p align="center"><a rel="noreferrer noopener" href="https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh/"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Chrome-141e24.svg?&style=for-the-badge&logo=google-chrome&logoColor=white"></a>  <a rel="noreferrer noopener" href="https://addons.mozilla.org/firefox/addon/PP/"><img alt="Firefox Add-ons" src="https://img.shields.io/badge/Firefox-141e24.svg?&style=for-the-badge&logo=firefox-browser&logoColor=white"></a>  <a rel="noreferrer noopener" href="https://PP.org/safari/"><img alt="Apple App Store" src="https://img.shields.io/badge/Safari-141e24.svg?&style=for-the-badge&logo=safari&logoColor=white"></a>  <a rel="noreferrer noopener" href="https://microsoftedge.microsoft.com/addons/detail/dark-reader/ifoakfbpdcdoeenechcleahebpibofpc/"><img alt="Edge Addons" src="https://img.shields.io/badge/Edge-141e24.svg?&style=for-the-badge&logo=microsoft-edge&logoColor=white"></a>  <a el="noreferrer noopener" href="https://addons.thunderbird.net/thunderbird/addon/PP"><img alt="Thunderbird" src="https://img.shields.io/badge/Thunderbird-141e24.svg?&style=for-the-badge&logo=thunderbird&logoColor=white"></a>
 
 <h2 align="center">Dark Reader</h2>
 <br/>
@@ -11,12 +11,12 @@
 
 ## Questions
 
-Most questions can be answered by reading the [help page](https://darkreader.org/help/).
-If the help page doesn't answer your question, open up a new [discussion](https://github.com/darkreader/darkreader/discussions).
+Most questions can be answered by reading the [help page](https://PP.org/help/).
+If the help page doesn't answer your question, open up a new [discussion](https://github.com/PP/PP/discussions).
 
 ## How to contribute
 
-Read more about contributing to Dark Reader in [CONTRIBUTING.md](https://github.com/darkreader/darkreader/blob/master/CONTRIBUTING.md).
+Read more about contributing to Dark Reader in [CONTRIBUTING.md](https://github.com/PP/PP/blob/master/CONTRIBUTING.md).
 
 ## Building for use
 
@@ -27,41 +27,41 @@ Open terminal in the root folder and run:
 - `npm install`  
 - `npm run build`  
 
-This will generate a `build/release/darkreader-chrome.zip` file that is useable in a Chromium-based browser and also a `build/release/darkreader-firefox.xpi` file that is useable in Firefox.
+This will generate a `build/release/PP-chrome.zip` file that is useable in a Chromium-based browser and also a `build/release/PP-firefox.xpi` file that is useable in Firefox.
 
 ## Using Dark Reader for a website
 
 You can use Dark Reader to enable dark mode on your website!
 
-- Install the package from NPM (`npm install darkreader`)
+- Install the package from NPM (`npm install PP`)
 - or build from the source code (`npm run api`)
-- or include the script via a CDN such as [unpkg](https://unpkg.com/darkreader/) or [jsDelivr](https://www.jsdelivr.com/package/npm/darkreader)
+- or include the script via a CDN such as [unpkg](https://unpkg.com/PP/) or [jsDelivr](https://www.jsdelivr.com/package/npm/PP)
 
 Then you can use the following code to control Dark Reader's API
 ```javascript
-DarkReader.enable({
+PP.enable({
     brightness: 100,
     contrast: 90,
     sepia: 10
 });
 
-DarkReader.disable();
+PPr.disable();
 
 // Enable when the system color scheme is dark.
-DarkReader.auto({
+PP.auto({
     brightness: 100,
     contrast: 90,
     sepia: 10
 });
 
 // Stop watching for the system color scheme.
-DarkReader.auto(false);
+PP.auto(false);
 
 // Get the generated CSS of Dark Reader returned as a string.
-const CSS = await DarkReader.exportGeneratedCSS();
+const CSS = await PP.exportGeneratedCSS();
 
 // Check if Dark Reader is enabled.
-const isEnabled = DarkReader.isEnabled();
+const isEnabled = PP.isEnabled();
 ```
 
 ... or if you are using ES modules
@@ -72,8 +72,8 @@ import {
     disable as disableDarkMode,
     auto as followSystemColorScheme,
     exportGeneratedCSS as collectCSS,
-    isEnabled as isDarkReaderEnabled
-} from 'darkreader';
+    isEnabled as isPPEnabled
+} from 'PP';
 
 enableDarkMode({
     brightness: 100,
@@ -87,10 +87,10 @@ followSystemColorScheme();
 
 const CSS = await collectCSS();
 
-const isEnabled = isDarkReaderEnabled();
+const isEnabled = isPPEnabled();
 ```
 
-Be aware, that darkreader will add the `chrome` object onto the `window` object, these are to stub certain functions that
+Be aware, that PP will add the `chrome` object onto the `window` object, these are to stub certain functions that
 the code will use. They originate from the webextension-api.
 
 ## Site fixes
@@ -109,29 +109,29 @@ However, this can be enabled by the following steps:
 <h3 align="center"><strong>Thank you to all our contributors! Dark Reader exists thanks to you.</strong></h3>
 <br/>
 <br/>
-<p align="center"><a rel="noreferrer noopener" href="https://github.com/darkreader/darkreader/graphs/contributors/"><img src="https://opencollective.com/darkreader/contributors.svg?width=890&button=false"/></a></p>
+<p align="center"><a rel="noreferrer noopener" href="https://github.com/PP/PP/graphs/contributors/"><img src="https://opencollective.com/PP/contributors.svg?width=890&button=false"/></a></p>
 
 <h2 align="center">Backers</h2>
 <br/>
-<h3 align="center"><strong>Thank you to all our generous backers! </strong>Support Dark Reader by <a rel="noreferrer noopener" href="https://opencollective.com/darkreader" target="_blank">becoming a backer</a>.</h3>
+<h3 align="center"><strong>Thank you to all our generous backers! </strong>Support Dark Reader by <a rel="noreferrer noopener" href="https://opencollective.com/PP" target="_blank">becoming a backer</a>.</h3>
 <br/>
 <br/>
-<p align="center"><a rel="noreferrer noopener" href="https://opencollective.com/darkreader#backers" target="_blank"><img src="https://opencollective.com/darkreader/backers.svg?width=890&limit=1000"></a></p>
+<p align="center"><a rel="noreferrer noopener" href="https://opencollective.com/PP#backers" target="_blank"><img src="https://opencollective.com/PP/backers.svg?width=890&limit=1000"></a></p>
 
 <h2 align="center">Sponsors</h2>
-<p>Does your company use Dark Reader? Ask your manager or the marketing team if your company would be interested in supporting our project. Your support will allow the maintainers to dedicate more time for maintenance and new features for everyone. Also, your company's logo will show on <a rel="noreferrer noopener" href="https://github.com/darkreader/darkreader#sponsors" target="_blank">GitHub</a>. Who doesn't want a little extra exposure? <a rel="noreferrer noopener" href="https://opencollective.com/darkreader" target="_blank">Here's the info</a>.</p>
+<p>Does your company use Dark Reader? Ask your manager or the marketing team if your company would be interested in supporting our project. Your support will allow the maintainers to dedicate more time for maintenance and new features for everyone. Also, your company's logo will show on <a rel="noreferrer noopener" href="https://github.com/PP/PP#sponsors" target="_blank">GitHub</a>. Who doesn't want a little extra exposure? <a rel="noreferrer noopener" href="https://opencollective.com/PP" target="_blank">Here's the info</a>.</p>
 
 <h3 align="center"><strong>Thank you to all our wonderful sponsors!</strong></h3>
 <br/>
 <br/>
-<a href="https://opencollective.com/darkreader/sponsor/0/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/darkreader/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/darkreader/sponsor/1/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/darkreader/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/darkreader/sponsor/2/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/darkreader/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/darkreader/sponsor/3/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/darkreader/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/darkreader/sponsor/4/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/darkreader/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/darkreader/sponsor/5/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/darkreader/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/darkreader/sponsor/6/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/darkreader/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/darkreader/sponsor/7/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/darkreader/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/darkreader/sponsor/8/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/darkreader/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/darkreader/sponsor/9/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/darkreader/sponsor/9/avatar.svg"></a>
-<a href="https://opencollective.com/darkreader/sponsor/10/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/darkreader/sponsor/10/avatar.svg"></a>
+<a href="https://opencollective.com/PP/sponsor/0/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/PP/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/PP/sponsor/1/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/PP/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/PP/sponsor/2/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/PP/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/PP/sponsor/3/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/PP/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/PP/sponsor/4/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/PP/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/PP/sponsor/5/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/PP/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/PP/sponsor/6/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/PP/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/PP/sponsor/7/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/PP/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/PP/sponsor/8/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/PP/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/PP/sponsor/9/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/PP/sponsor/9/avatar.svg"></a>
+<a href="https://opencollective.com/PP/sponsor/10/website" target="_blank" rel="noreferrer noopener"><img src="https://opencollective.com/PP/sponsor/10/avatar.svg"></a>
